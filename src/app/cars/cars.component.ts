@@ -20,7 +20,9 @@ export class CarsComponent implements OnInit {
     const car2 = new Car('Audi','A4','Cluj Piezisa');
     const car3 = new Car('Mercedes', 'C220', 'Bucuresti Afi');
     const car4 = new Car('Mercedes','Sprinter','Timisoara Lipovei');
-    this.cars.push(car1,car2,car3,car4);
+    const car5 = new Car('Saab','Saab 9-3','Timisoara Centru');
+    const car6 = new Car('Mercedes','ML','Timisoara Lipovei');
+    this.cars.push(car1,car2,car3,car4,car5,car6);
     this.brand = this.sharedService.brand;
     this.rentalOffice = this.sharedService.rentalOffice;
     this.filteredCars = this.cars.filter(car => car.brand === this.brand && car.rentalOffice === this.rentalOffice);

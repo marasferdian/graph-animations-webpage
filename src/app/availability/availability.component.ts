@@ -8,11 +8,11 @@ import {Router} from '@angular/router';
 })
 export class AvailabilityComponent implements OnInit {
   available: boolean;
-  price: number;
+  price: string;
   constructor(private router: Router) { }
 
   ngOnInit() {
-    this.price = Math.round(Math.random());
+    this.price = Math.floor(Math.random() * 100) + 100 + '$';
     this.available = Math.random() >= 0.5;
   }
   isAvailable() {
@@ -20,6 +20,10 @@ export class AvailabilityComponent implements OnInit {
   }
   onTakeBack() {
     this.router.navigate(['/cars']);
+  }
+  onBook() {
+    this.router.navigate(['/success'
+    ]);
   }
 
 }

@@ -16,11 +16,13 @@ import {RouterModule, Routes} from '@angular/router';
 import {ReservationsComponent} from './reservations/reservations.component';
 import {AvailabilityComponent} from './availability/availability.component';
 import {SharedService} from './shared/shared.service';
+import { SuccessComponent } from './success/success.component';
 
 const appRoutes: Routes = [
   {path: '', component: ReservationsComponent},
   {path: 'cars', component: CarsComponent},
-  {path: 'availability', component: AvailabilityComponent}
+  {path: 'availability', component: AvailabilityComponent},
+  {path: 'success', component: SuccessComponent}
 ];
 
 @NgModule({
@@ -28,7 +30,8 @@ const appRoutes: Routes = [
     AppComponent,
     CarsComponent,
     ReservationsComponent,
-    AvailabilityComponent
+    AvailabilityComponent,
+    SuccessComponent
   ],
   imports: [
     BrowserModule,
