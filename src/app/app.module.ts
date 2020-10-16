@@ -8,30 +8,24 @@ import {
   MatInputModule,
   MatFormFieldModule,
   MatNativeDateModule,
-  MatButtonToggleModule, MatButtonModule, MatGridListModule, MatCardModule
+  MatButtonToggleModule, MatButtonModule, MatGridListModule, MatCardModule, MatTableModule
 } from '@angular/material';
 import {FormsModule} from '@angular/forms';
-import {CarsComponent} from './cars/cars.component';
 import {RouterModule, Routes} from '@angular/router';
-import {ReservationsComponent} from './reservations/reservations.component';
-import {AvailabilityComponent} from './availability/availability.component';
+import {HomePageComponent} from './home-page/home-page.component';
 import {SharedService} from './shared/shared.service';
-import { SuccessComponent } from './success/success.component';
+import { AlgorithmGifComponent } from './algorithm-gif/algorithm-gif.component';
 
 const appRoutes: Routes = [
-  {path: '', component: ReservationsComponent},
-  {path: 'cars', component: CarsComponent},
-  {path: 'availability', component: AvailabilityComponent},
-  {path: 'success', component: SuccessComponent}
+  {path: '', component: HomePageComponent},
+  {path: 'algorithm-animation', component: AlgorithmGifComponent}
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
-    CarsComponent,
-    ReservationsComponent,
-    AvailabilityComponent,
-    SuccessComponent
+    HomePageComponent,
+    AlgorithmGifComponent
   ],
   imports: [
     BrowserModule,
@@ -44,8 +38,9 @@ const appRoutes: Routes = [
     FormsModule,
     MatButtonModule,
     MatGridListModule,
+    MatCardModule,
     RouterModule.forRoot(appRoutes),
-    MatCardModule
+    MatTableModule
   ],
   providers: [SharedService],
   bootstrap: [AppComponent]

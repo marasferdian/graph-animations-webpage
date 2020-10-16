@@ -1,0 +1,40 @@
+<div style="text-align:center">
+  <h1 style="color: #3F51B5">
+    Animations of well-known graph algorithms
+  </h1>
+  <h5 style="color: #E91E63">Made by Mara Sferdian and Alexandru Preda using the GraphAnim library for Python <a href="https://github.com/avikj/graphanim" style="color: #E91E63">found here on Github</a></h5>
+</div>
+<br>
+<div style="text-align: center">
+<h4 style="color: #3F51B5">An uninformed search is a searching technique that has no additional information about the distance from the current state to the goal.</h4>
+<h4 style="color: #3F51B5"> Informed Search is another technique that has additional information about the estimate distance from the current state to the goal.</h4>
+</div>
+
+<mat-grid-list cols = '2' rowHeight="35%">
+  <mat-grid-tile>
+    <mat-form-field>
+      <mat-label>Blind search algorithms</mat-label>
+      <select matNativeControl required [(ngModel)]="search">
+        <option value="DFS">Depth-first search</option>
+        <option value="BFS">Breadth-first search</option>
+        <option value="depth-limited">Depth-limited search</option>
+        <option value="iterative-deepening">Iterative deepening search</option>
+        <option value="uniform-cost">Uniform Cost search</option>
+      </select>
+    </mat-form-field>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <mat-form-field>
+      <mat-label>Informed search algorithms</mat-label>
+      <select matNativeControl required [(ngModel)]="search">
+        <option value="a-star">A* search</option>
+        <option value="greedy-bfs">Greedy best first search</option>
+      </select>
+    </mat-form-field>
+  </mat-grid-tile>
+</mat-grid-list>
+<div style="text-align:center">
+  <button mat-raised-button color="accent" (click)="onClick()">See how it works!</button>
+</div>
+<br>
+<a class="mat-raised-button" style="color: #3F51B5" href="https://github.com/marasferdian/graph-algorithms-animations.git">Go to our implementations on Github</a>

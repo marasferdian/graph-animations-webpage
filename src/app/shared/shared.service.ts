@@ -2,11 +2,9 @@ import {Injectable} from '@angular/core';
 
 @Injectable()
 export class SharedService {
-  public brand;
-  public rentalOffice;
+  public algorithm;
 
-  setFilterValues(brand:string, rentalOffice: string) {
-    this.brand = brand;
-    this.rentalOffice = rentalOffice;
-}
+  setAlgorithm(algorithm) {
+    this.algorithm = algorithm;
+  }
 }

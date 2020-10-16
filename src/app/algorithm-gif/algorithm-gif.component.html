@@ -1,0 +1,100 @@
+<button mat-raised-button color="accent" style="float: right; z-index: 1000" (click)="onClick()">Choose another algorithm</button>
+<br>
+<div *ngIf="algorithm === 'BFS'">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title style="color: #3F51B5">Breadth First Search</mat-card-title>
+      <mat-card-subtitle>Blind search algorithm</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <p>
+        Breadth-first search (BFS) is an algorithm for traversing or searching tree or graph data structures. It starts at the tree root (or some arbitrary node of a graph, sometimes referred to as a 'search key'), and explores all of the neighbor nodes at the present depth prior to moving on to the nodes at the next depth level.
+        It uses the opposite strategy of depth-first search, which instead explores the node branch as far as possible before being forced to backtrack and expand other nodes.
+        BFS and its application in finding connected components of graphs were invented in 1945 by Konrad Zuse, in his (rejected) Ph.D. thesis on the Plankalkül programming language, but this was not published until 1972. It was reinvented in 1959 by Edward F. Moore, who used it to find the shortest path out of a maze, and later developed by C. Y. Lee into a wire routing algorithm (published 1961).
+      </p>
+      <div style="height:500px; width: 500px">
+      <img mat-card-image src="assets/bfs.gif" alt="BFS GIF">
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>
+<div *ngIf="algorithm === 'DFS'">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title style="color: #3F51B5">Depth First Search</mat-card-title>
+      <mat-card-subtitle>Blind search algorithm</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <p>Depth-first search (DFS) is an algorithm for traversing or searching tree or graph data structures. The algorithm starts at the root node (selecting some arbitrary node as the root node in the case of a graph) and explores as far as possible along each branch before backtracking.
+        A version of depth-first search was investigated in the 19th century by French mathematician Charles Pierre Trémaux as a strategy for solving mazes.
+      </p>
+      <div style="height:500px; width: 500px">
+        <img mat-card-image src="assets/dfs.gif" alt="DFS GIF">
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>
+<div *ngIf="algorithm === 'depth-limited'">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title style="color: #3F51B5">Depth-limited search</mat-card-title>
+      <mat-card-subtitle>Blind search algorithm</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <p>Depth limited search is a relatively new search algorithm for uninformed search. The unbounded tree problem happens to appear in the depth-first search algorithm, and it can be fixed by imposing a boundary or a limit to the depth of the search domain. We will say that this limit is the depth limit which makes the DFS search strategy more refined and organized into a finite loop.
+      The algorithm below wants to find a path between A and H, having a maximum depth of 3. If we had set 2, it would have found a shorter path (check Iterative Deepening Search for this).</p>
+      <div style="height:500px; width: 500px">
+        <img mat-card-image src="assets/depth-limited.gif" alt="DEPTH LIMITED GIF">
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>
+<div *ngIf="algorithm === 'iterative-deepening'">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title style="color: #3F51B5">Iterative deepening search</mat-card-title>
+      <mat-card-subtitle>Blind search algorithm</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <p>In computer science, iterative deepening search or more specifically iterative deepening depth-first search (IDS or IDDFS) is a state space/graph search strategy in which a depth-limited version of depth-first search is run repeatedly with increasing depth limits until the goal is found. IDDFS is optimal like breadth-first search, but uses much less memory; at each iteration, it visits the nodes in the search tree in the same order as depth-first search, but the cumulative order in which nodes are first visited is effectively breadth-first.
+      This is the same graph as the one used for the depth-limited search algorithm, but we can see IDDFS finds a shorter path, with a depth of 2, between A and H, without us knowing what maximum depth to give it.</p>
+      <div style="height:500px; width: 500px">
+        <img mat-card-image src="assets/iterative-deepening.gif" alt="ITERATIVE DEEPENING GIF">
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>
+<div *ngIf="algorithm === 'uniform-cost'">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title style="color: #3F51B5">Uniform cost search</mat-card-title>
+      <mat-card-subtitle>Blind search algorithm</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <p>Uniform-Cost Search is similar to Dijikstra’s algorithm . In this algorithm from the starting state we will visit the adjacent states and will choose the least costly state; then we will choose the next least costly state from the all un-visited and adjacent states of the visited states. In this way we will try to reach the goal state; even if we reach the goal state we will continue searching for other possible paths( if there are multiple goals) . We will keep a priority queue which will give the least costliest next state from all the adjacent states of visited states. The algorithm displayed below wants to find the shortest path from A to K.</p>
+      <div style="height:500px; width: 500px">
+        <img mat-card-image src="assets/ucs.gif" alt="UNIFORM COST SEARCH GIF">
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>
+<div *ngIf="algorithm === 'a-star'">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title style="color: #3F51B5">A* search</mat-card-title>
+      <mat-card-subtitle>Informed search algorithm</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <p>A* is an informed search algorithm, or a best-first search, meaning that it is formulated in terms of weighted graphs: starting from a specific starting node of a graph, it aims to find a path to the given goal node having the smallest cost (least distance travelled, shortest time, etc.). It does this by maintaining a tree of paths originating at the start node and extending those paths one edge at a time until its termination criterion is satisfied.
+        At each iteration of its main loop, A* needs to determine which of its paths to extend. It does so based on the cost of the path and an estimate of the cost required to extend the path all the way to the goal. Specifically, A* selects the path that minimizes
+       f(n)=g(n)+h(n) ,where n is the next node on the path, g(n) is the cost of the path from the start node to n, and h(n) is a heuristic function that estimates the cost of the cheapest path from n to the goal. A* terminates when the path it chooses to extend is a path from start to goal or if there are no paths eligible to be extended. The heuristic function is problem-specific. If the heuristic function is admissible, meaning that it never overestimates the actual cost to get to the goal, A* is guaranteed to return a least-cost path from start to goal.
+        Typical implementations of A* use a priority queue to perform the repeated selection of minimum (estimated) cost nodes to expand. Below we have the graph we are doing an A* search on and the values of the heuristic function, ie. the straight-line distance from each node to K. We are trying to find the best route from A to K.</p>
+      <div style="height:500px; width: 500px; display: inline-block">
+        <img mat-card-image src="assets/a_star.gif" alt="A* SEARCH GIF">
+      </div>
+      <div style="display: inline-block">
+        Heuristic
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>
