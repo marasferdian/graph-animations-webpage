@@ -92,8 +92,57 @@
       <div style="height:500px; width: 500px; display: inline-block">
         <img mat-card-image src="assets/a_star.gif" alt="A* SEARCH GIF">
       </div>
-      <div style="display: inline-block">
-        Heuristic
+      <div style="display: inline-block; float: right">
+        <h4>Heuristic</h4>
+        <i>Estimated straight-line distance from each node to K</i>
+        <p> <b>A: </b> 380</p>
+        <p> <b>B: </b> 374</p>
+        <p> <b>C: </b> 366</p>
+        <p> <b>D: </b> 329</p>
+        <p> <b>E: </b> 244</p>
+        <p> <b>F: </b> 253</p>
+        <p> <b>G: </b> 193</p>
+        <p> <b>H: </b> 176</p>
+        <p> <b>I: </b> 100</p>
+        <p> <b>J: </b> 160</p>
+        <p> <b>K: </b> 0</p>
+        <p> <b>L: </b> 241</p>
+        <p> <b>M: </b> 242</p>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>
+<div *ngIf="algorithm === 'greedy-bfs'">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title style="color: #3F51B5">Greedy Best First Search</mat-card-title>
+      <mat-card-subtitle>Informed search algorithm</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <p>Best-first search is a search algorithm which explores a graph by expanding the most promising node chosen according to a specified rule.
+        Judea Pearl described best-first search as estimating the promise of node n by a "heuristic evaluation function f(n) which, in general, may depend on the description of n, the description of the goal, the information gathered by the search up to that point, and most important, on any extra knowledge about the problem domain."Using a greedy algorithm, expand the first successor of the parent. After a successor is generated:
+
+        If the successor's heuristic is better than its parent, the successor is set at the front of the queue (with the parent reinserted directly behind it), and the loop restarts.
+        Else, the successor is inserted into the queue (in a location determined by its heuristic value). The procedure will evaluate the remaining successors (if any) of the parent. Greedy BFS is neither optimal nor complete. It may find the optimal path; in this case it doesn't. The algorithm searches for the best route from A to K. Compare with A* next, which gives the optimal solution. </p>
+      <div style="height:500px; width: 500px; display: inline-block">
+        <img mat-card-image src="assets/greedyBFS.gif" alt="GREEDY BFS GIF">
+      </div>
+      <div style="display: inline-block; float: right">
+        <h4>Heuristic</h4>
+        <i>Estimated straight-line distance from each node to K</i>
+        <p> <b>A: </b> 380</p>
+        <p> <b>B: </b> 374</p>
+        <p> <b>C: </b> 366</p>
+        <p> <b>D: </b> 329</p>
+        <p> <b>E: </b> 244</p>
+        <p> <b>F: </b> 253</p>
+        <p> <b>G: </b> 193</p>
+        <p> <b>H: </b> 176</p>
+        <p> <b>I: </b> 100</p>
+        <p> <b>J: </b> 160</p>
+        <p> <b>K: </b> 0</p>
+        <p> <b>L: </b> 241</p>
+        <p> <b>M: </b> 242</p>
       </div>
     </mat-card-content>
   </mat-card>
