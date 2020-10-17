@@ -14,22 +14,22 @@
   <mat-grid-tile>
     <mat-form-field>
       <mat-label>Blind search algorithms</mat-label>
-      <select matNativeControl required [(ngModel)]="search">
-        <option value="DFS">Depth-first search</option>
-        <option value="BFS">Breadth-first search</option>
-        <option value="depth-limited">Depth-limited search</option>
-        <option value="iterative-deepening">Iterative deepening search</option>
-        <option value="uniform-cost">Uniform Cost search</option>
-      </select>
+      <mat-select [(ngModel)]="search">
+        <mat-option value="DFS">Depth-first search</mat-option>
+        <mat-option value="BFS">Breadth-first search</mat-option>
+        <mat-option value="depth-limited">Depth-limited search</mat-option>
+        <mat-option value="iterative-deepening">Iterative deepening search</mat-option>
+        <mat-option value="uniform-cost">Uniform Cost search</mat-option>
+      </mat-select>
     </mat-form-field>
   </mat-grid-tile>
   <mat-grid-tile>
     <mat-form-field>
       <mat-label>Informed search algorithms</mat-label>
-      <select matNativeControl required [(ngModel)]="search">
-        <option value="greedy-bfs">Greedy best first search</option>
-        <option value="a-star">A* search</option>
-      </select>
+      <mat-select [(ngModel)]="search">
+        <mat-option value="greedy-bfs">Greedy best first search</mat-option>
+        <mat-option value="a-star">A* search</mat-option>
+      </mat-select>
     </mat-form-field>
   </mat-grid-tile>
 </mat-grid-list>

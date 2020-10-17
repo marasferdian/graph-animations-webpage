@@ -15,6 +15,7 @@ import {RouterModule, Routes} from '@angular/router';
 import {HomePageComponent} from './home-page/home-page.component';
 import {SharedService} from './shared/shared.service';
 import { AlgorithmGifComponent } from './algorithm-gif/algorithm-gif.component';
+import {MatSelectModule} from '@angular/material';
 
 const appRoutes: Routes = [
   {path: '', component: HomePageComponent},
@@ -40,7 +41,8 @@ const appRoutes: Routes = [
     MatGridListModule,
     MatCardModule,
     RouterModule.forRoot(appRoutes),
-    MatTableModule
+    MatTableModule,
+    MatSelectModule
   ],
   providers: [SharedService],
   bootstrap: [AppComponent]
